@@ -295,6 +295,11 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
+-- my custom keymap
+vim.keymap.set('n', '<leader>e', "<cmd>Explore<CR>")
+vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>')
+vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>')
+
 local servers = {
   -- clangd = {},
   -- gopls = {},
