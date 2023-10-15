@@ -94,4 +94,7 @@ return {
 
 	{ 'dhruvasagar/vim-table-mode' },
 
+	{ 'joerdav/templ.vim' },
+	{ 'mustache/vim-mustache-handlebars' },
+
 }
