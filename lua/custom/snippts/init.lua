@@ -37,7 +37,7 @@ ls.add_snippets("go", {
     "db",
     fmt(
       [[
-    db, err := sql.Open("sqlite3", DB_NAME)
+    db, err := sql.Open(DB_TYPE, DB_NAME)
     defer db.Close()
     if err != nil {{
         log.Println(err)
