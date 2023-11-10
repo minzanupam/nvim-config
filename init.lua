@@ -261,7 +261,7 @@ require('nvim-treesitter.configs').setup {
 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 local on_attach = function(_, bufnr)
@@ -286,7 +286,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
@@ -303,8 +303,8 @@ end
 
 -- my custom keymap
 vim.keymap.set('n', '<leader>e', "<cmd>Explore<CR>")
-vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>')
-vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>')
+vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
+vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>', { silent = true })
 
 local servers = {
   -- clangd = {},

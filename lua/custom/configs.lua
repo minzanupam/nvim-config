@@ -27,5 +27,6 @@ vim.keymap.set("n", "<C-k>", function() vim.cmd("cprev") end)
 vim.g.neovide_scroll_animation_length = 0
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_size = 0
-vim.o.guifont = "Fira Code:h12" 
+vim.o.guifont = "Fira Code:h12"
 
+require 'lspconfig'.gdscript.setup {}
