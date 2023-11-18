@@ -10,7 +10,7 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "gruvbox",
+			colorscheme = "tokyonight",
 			transparent = true,
 			term_colors = true,
 
