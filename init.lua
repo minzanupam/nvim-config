@@ -117,12 +117,12 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  require 'kickstart.plugins.autoformat',
+  -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
   { import = 'custom.plugins' },
 }, {})
 
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.mouse = 'a'
