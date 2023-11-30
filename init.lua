@@ -141,9 +141,9 @@ vim.o.termguicolors = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = false
-
 vim.o.smarttab = true
 vim.o.smartcase = true
+vim.o.autowriteall = true
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set("x", "<leader>p", '"_dP')
