@@ -10,7 +10,7 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "tokyonight",
+			colorscheme = "catppuccin",
 			transparent = true,
 			term_colors = true,
 
@@ -56,7 +56,7 @@ return {
 							ColorColumn = { bg = "#32334a" }
 						},
 					},
-					tokyonight = {
+					catppuccin = {
 						base = {
 							ColorColumn = { bg = "#32334a" }
 						},
