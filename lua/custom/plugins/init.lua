@@ -10,7 +10,7 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "catppuccin",
+			colorscheme = "gruvbox",
 			transparent = true,
 			term_colors = true,
 
