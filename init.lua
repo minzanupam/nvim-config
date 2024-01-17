@@ -117,12 +117,12 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  require 'kickstart.plugins.autoformat',
+  -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
   { import = 'custom.plugins' },
 }, {})
 
-vim.o.hlsearch = true
+vim.o.hlsearch = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.mouse = 'a'
@@ -171,9 +171,6 @@ require('telescope').setup {
     },
   },
 }
-
-pcall(require('telescope').load_extension, 'fzf')
-
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
@@ -286,7 +283,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
@@ -303,8 +300,8 @@ end
 
 -- my custom keymap
 vim.keymap.set('n', '<leader>e', "<cmd>Explore<CR>")
-vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
-vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>', { silent = true })
+-- vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
+-- vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>', { silent = true })
 
 local servers = {
   -- clangd = {},

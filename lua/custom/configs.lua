@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>ht", function() require("harpoon.term").gotoTermina
 
 local group_code_format = vim.api.nvim_create_augroup('group_code_format', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = { "*.go", "*.rs" },
+  pattern = { "*.go", "*.rs", "*.js" },
   group = group_code_format,
   command = ":Neoformat",
 })
@@ -30,3 +30,5 @@ vim.g.neovide_cursor_trail_size = 0
 vim.o.guifont = "Fira Code:h12"
 
 require 'lspconfig'.gdscript.setup {}
+
+require 'lsp_signature'.setup({})

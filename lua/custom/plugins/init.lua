@@ -10,8 +10,8 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "gruvbox",
-			transparent = true,
+			colorscheme = "nord",
+			transparent = false,
 			term_colors = true,
 
 			styles = {
@@ -54,6 +54,11 @@ return {
 					tokyodark = {
 						base = {
 							ColorColumn = { bg = "#32334a" }
+						},
+					},
+					tokyonight = {
+						base = {
+							ColorColumn = { bg = "#3b4252" }
 						},
 					},
 					catppuccin = {

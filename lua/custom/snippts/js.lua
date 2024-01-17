@@ -33,7 +33,7 @@ for _, lang in pairs(langs) do
       )
     ),
     s(
-      'comm',
+      'o/',
       fmt(
         [[
       /** {} */
