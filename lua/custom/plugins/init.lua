@@ -83,7 +83,13 @@ return {
 		opts = {}
 	},
 
-	{ 'ThePrimeagen/harpoon', opts = {} },
+	-- { 'ThePrimeagen/harpoon', opts = {} },
+
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	},
 
 	-- to format code
 	{ 'sbdchd/neoformat' },
@@ -101,5 +107,14 @@ return {
 
 	{ 'joerdav/templ.vim' },
 	{ 'mustache/vim-mustache-handlebars' },
+	{
+		'stevearc/aerial.nvim',
+		opts = {},
+		-- Optional dependencies
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons"
+		},
+	}
 
 }

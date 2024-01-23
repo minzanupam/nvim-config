@@ -117,12 +117,12 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- require 'kickstart.plugins.autoformat',
+  require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
   { import = 'custom.plugins' },
 }, {})
 
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.o.mouse = 'a'
@@ -302,6 +302,8 @@ end
 vim.keymap.set('n', '<leader>e', "<cmd>Explore<CR>")
 -- vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
 -- vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-p>', '<cmd>cprev<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-n>', '<cmd>cnext<CR>', { silent = true })
 
 local servers = {
   -- clangd = {},
