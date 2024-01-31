@@ -10,7 +10,7 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "nord",
+			colorscheme = "gruvbox",
 			transparent = false,
 			term_colors = true,
 
@@ -34,7 +34,7 @@ return {
 				palette = {
 					gruvbox = {
 						["dimmed"] = { ["subtle"] = "#7c6f64" },
-						["bg"] = { ["base"] = "#1d2021" },
+						-- ["bg"] = { ["base"] = "#1d2021" },
 					},
 					tokyodark = {
 						["bg"] = { ["selected"] = "#32334a" },
@@ -115,6 +115,7 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons"
 		},
-	}
+	},
 
+	{ 'nvim-treesitter/nvim-treesitter-context' },
 }
