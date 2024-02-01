@@ -10,7 +10,7 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "gruvbox",
+			colorscheme = "onedark",
 			transparent = false,
 			term_colors = true,
 
@@ -118,4 +118,17 @@ return {
 	},
 
 	{ 'nvim-treesitter/nvim-treesitter-context' },
+
+	{
+		"folke/zen-mode.nvim",
+		opts = {}
+	},
+
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
+	},
+
+	{ "vuciv/vim-bujo" }
 }
