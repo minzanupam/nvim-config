@@ -41,7 +41,7 @@ ls.add_snippets("go", {
     defer db.Close()
     if err != nil {{
         log.Println(err)
-        w.WriteHeader(http.StatusInternalServerError)
+        c.String(http.StatusInternalServerError, "failed to connect to database")
         return
     }}
       ]],
@@ -81,7 +81,7 @@ ls.add_snippets("go", {
     defer rows.Close()
     if err != nil {{
         log.Println(err)
-        w.WriteHeader(http.StatusInternalServerError)
+        c.String(http.StatusInternalServerError, "query failed")
         return
     }}
     for rows.Next() {{
