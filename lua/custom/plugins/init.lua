@@ -10,8 +10,8 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "onedark",
-			transparent = false,
+			colorscheme = "tokyonight",
+			transparent = true,
 			term_colors = true,
 
 			styles = {
