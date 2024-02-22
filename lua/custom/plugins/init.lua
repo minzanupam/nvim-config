@@ -10,15 +10,15 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = "tokyonight",
+			colorscheme = 'tokyonight',
 			transparent = true,
 			term_colors = true,
 
 			styles = {
-				constant = { style = "bold" },
-				constantBuiltIn = { style = "bold" },
-				keyword = { style = "italic" },
-				keywordBuiltIn = { style = "italic" },
+				constant = { style = 'bold' },
+				constantBuiltIn = { style = 'bold' },
+				keyword = { style = 'italic' },
+				keywordBuiltIn = { style = 'italic' },
 			},
 			plugins = {
 				treesitter = true,
@@ -33,62 +33,62 @@ return {
 			remaps = {
 				palette = {
 					gruvbox = {
-						["dimmed"] = { ["subtle"] = "#7c6f64" },
+						['dimmed'] = { ['subtle'] = '#7c6f64' },
 						-- ["bg"] = { ["base"] = "#1d2021" },
 					},
 					tokyodark = {
-						["bg"] = { ["selected"] = "#32334a" },
+						['bg'] = { ['selected'] = '#32334a' },
 					},
 				},
 				highlights = {
 					gruvbox = {
 						base = {
-							ColorColumn = { bg = "#3c3836" },
+							ColorColumn = { bg = '#3c3836' },
 						},
 					},
 					nord = {
 						base = {
-							ColorColumn = { bg = "#3b4252" }
+							ColorColumn = { bg = '#3b4252' },
 						},
 					},
 					tokyodark = {
 						base = {
-							ColorColumn = { bg = "#32334a" }
+							ColorColumn = { bg = '#32334a' },
 						},
 					},
 					tokyonight = {
 						base = {
-							ColorColumn = { bg = "#3b4252" }
+							ColorColumn = { bg = '#3b4252' },
 						},
 					},
 					catppuccin = {
 						base = {
-							ColorColumn = { bg = "#32334a" }
+							ColorColumn = { bg = '#32334a' },
 						},
 					},
 				},
 			},
-		}
+		},
 	},
 
 	-- undo tree
 	{ 'mbbill/undotree' },
 
 	-- treesitter playground to view the treesitter AST
-	{ "nvim-treesitter/playground" },
+	{ 'nvim-treesitter/playground' },
 
 	-- improve rust integration nvim
 	{
 		'simrat39/rust-tools.nvim',
-		opts = {}
+		opts = {},
 	},
 
 	-- { 'ThePrimeagen/harpoon', opts = {} },
 
 	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		dependencies = { "nvim-lua/plenary.nvim" }
+		'ThePrimeagen/harpoon',
+		branch = 'harpoon2',
+		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
 
 	-- to format code
@@ -97,10 +97,12 @@ return {
 	-- { 'mattn/emmet-vim' },
 
 	{
-		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
+		'ray-x/lsp_signature.nvim',
+		event = 'VeryLazy',
 		opts = {},
-		config = function(_, opts) require 'lsp_signature'.setup(opts) end
+		config = function(_, opts)
+			require('lsp_signature').setup(opts)
+		end,
 	},
 
 	{ 'dhruvasagar/vim-table-mode' },
@@ -112,46 +114,46 @@ return {
 		opts = {},
 		-- Optional dependencies
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons"
+			'nvim-treesitter/nvim-treesitter',
+			'nvim-tree/nvim-web-devicons',
 		},
 	},
 
 	{ 'nvim-treesitter/nvim-treesitter-context' },
 
 	{
-		"folke/zen-mode.nvim",
-		opts = {}
-	},
-
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		'folke/zen-mode.nvim',
 		opts = {},
 	},
 
-	{ "vuciv/vim-bujo" },
+	{
+		'folke/trouble.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		opts = {},
+	},
+
+	{ 'vuciv/vim-bujo' },
 
 	{
-		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
+		'nvim-neorg/neorg',
+		build = ':Neorg sync-parsers',
 		-- tag = "*",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { 'nvim-lua/plenary.nvim' },
 		config = function()
-			require("neorg").setup {
+			require('neorg').setup {
 				load = {
-					["core.defaults"] = {}, -- Loads default behaviour
-					["core.concealer"] = {}, -- Adds pretty icons to your documents
-					["core.journal"] = {
+					['core.defaults'] = {}, -- Loads default behaviour
+					['core.concealer'] = {}, -- Adds pretty icons to your documents
+					['core.journal'] = {
 						config = {
-							journal_folder = "Documents/neorg/journal"
-						}
+							journal_folder = 'Documents/neorg/journal',
+						},
 					},
 					-- Adds pretty icons to your documents
-					["core.dirman"] = { -- Manages Neorg workspaces
+					['core.dirman'] = { -- Manages Neorg workspaces
 						config = {
 							workspaces = {
-								notes = "~/Documents/neorg/notes",
+								notes = '~/Documents/neorg/notes',
 							},
 							default_workspace = notes,
 						},
