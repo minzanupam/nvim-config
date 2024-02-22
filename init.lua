@@ -57,15 +57,23 @@ require('lazy').setup({
 
         local gs = package.loaded.gitsigns
         vim.keymap.set({ 'n', 'v' }, ']c', function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() gs.next_hunk() end)
+          if vim.wo.diff then
+            return ']c'
+          end
+          vim.schedule(function()
+            gs.next_hunk()
+          end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
         vim.keymap.set({ 'n', 'v' }, '[c', function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() gs.prev_hunk() end)
+          if vim.wo.diff then
+            return '[c'
+          end
+          vim.schedule(function()
+            gs.prev_hunk()
+          end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
       end,
     },
   },
@@ -84,7 +92,7 @@ require('lazy').setup({
 
   {
     'lukas-reineke/indent-blankline.nvim',
-    main = "ibl",
+    main = 'ibl',
     opts = {
       -- char = '┊',
       -- show_trailing_blankline_indent = false,
@@ -128,7 +136,7 @@ vim.wo.relativenumber = true
 vim.o.mouse = 'a'
 vim.o.wrap = false
 vim.o.clipboard = 'unnamedplus'
-vim.o.colorcolumn = "79"
+vim.o.colorcolumn = '79'
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
@@ -147,16 +155,16 @@ vim.o.autowriteall = true
 vim.opt.guicursor = 'n-v-c-i:block'
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set("x", "<leader>p", '"_dP')
+vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank({
+    vim.highlight.on_yank {
       timeout = 40,
-    })
+    }
   end,
   group = highlight_group,
   pattern = '*',
@@ -181,8 +189,9 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
-vim.keymap.set('n', '<leader>pf', function() require('telescope.builtin').git_files({ show_untracked = true }) end,
-  { desc = 'Search [P]roject Git [F]iles' })
+vim.keymap.set('n', '<leader>pf', function()
+  require('telescope.builtin').git_files { show_untracked = true }
+end, { desc = 'Search [P]roject Git [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
@@ -300,7 +309,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- my custom keymap
-vim.keymap.set('n', '<leader>e', "<cmd>Explore<CR>")
+vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
 -- vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
 -- vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>', { silent = true })
 vim.keymap.set('n', '<C-S-p>', '<cmd>cprev<CR>', { silent = true })
@@ -342,7 +351,7 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
-  end
+  end,
 }
 
 local cmp = require 'cmp'
@@ -391,5 +400,5 @@ cmp.setup {
   },
 }
 
-require('custom.configs')
-require('custom.snippts')
+require 'custom.configs'
+require 'custom.snippts'
