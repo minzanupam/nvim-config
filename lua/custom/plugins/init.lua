@@ -94,7 +94,7 @@ return {
 	-- to format code
 	{ 'sbdchd/neoformat' },
 
-	{ 'mattn/emmet-vim' },
+	-- { 'mattn/emmet-vim' },
 
 	{
 		"ray-x/lsp_signature.nvim",
