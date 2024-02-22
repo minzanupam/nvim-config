@@ -144,6 +144,7 @@ vim.o.expandtab = false
 vim.o.smarttab = true
 vim.o.smartcase = true
 vim.o.autowriteall = true
+vim.opt.guicursor = 'n-v-c-i:block'
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set("x", "<leader>p", '"_dP')
