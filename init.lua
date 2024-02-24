@@ -338,6 +338,7 @@ local servers = {
       'typescriptreact',
       'html',
       'hbs',
+      'templ',
     }
   },
 }
