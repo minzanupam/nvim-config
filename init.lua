@@ -90,17 +90,17 @@ require('lazy').setup({
     },
   },
 
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    -- main = 'ibl',
-    config = function()
-      require('ibl').setup({
-        indent = {
-          char = '┊',
-        },
-      })
-    end,
-  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- main = 'ibl',
+  --   config = function()
+  --     require('ibl').setup({
+  --       indent = {
+  --         char = '┊',
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
