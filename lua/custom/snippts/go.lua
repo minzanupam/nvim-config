@@ -25,12 +25,10 @@ ls.add_snippets("go", {
     fmt(
       [[
     if err != nil {{
-        w.WriteHeader({})
-        log.Println(err)
-        return
+        return err
     }}
       ]],
-      { i(0) }
+      {}
     )
   ),
   s(

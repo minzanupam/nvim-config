@@ -410,8 +410,8 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'luasnip' },
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
   },
 }
 
