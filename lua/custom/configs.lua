@@ -56,8 +56,8 @@ require("aerial").setup({
 vim.cmd([[nnoremap <esc><esc> :silent! nohls<cr>]])
 
 -- vim.keymap.set('n', '<leader>xs', '<Plug>RestNvim')
-vim.keymap.set('n', '<c-y><c-,>', '<Plug>emmet-expand-abbr')
-
+-- vim.keymap.set('n', '<c-y><c-,>', '<Plug>emmet-expand-abbr')
+--
 require 'treesitter-context'.setup {
   enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
   max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
