@@ -30,17 +30,15 @@ vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
 --   command = ":Neoformat",
 -- })
 
-vim.keymap.set("n", "<C-j>", function() vim.cmd("cnext") end)
-vim.keymap.set("n", "<C-k>", function() vim.cmd("cprev") end)
-
 vim.g.neovide_scroll_animation_length = 0
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_size = 0
 vim.o.guifont = "Fira Code:h12"
 
-require 'lspconfig'.gdscript.setup {}
-
-require 'lsp_signature'.setup({})
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+require 'lspconfig'.gdscript.setup { capabilities = capabilities }
+require 'lspconfig'.zls.setup { capabilities = capabilities }
 
 require("aerial").setup({
   -- optionally use on_attach to set keymaps when aerial has attached to a buffer

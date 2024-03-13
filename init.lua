@@ -133,30 +133,32 @@ require('lazy').setup({
   { import = 'custom.plugins' },
 }, {})
 
-vim.o.hlsearch = true
+vim.opt.hlsearch = true
 vim.wo.number = true
 vim.wo.relativenumber = true
-vim.o.mouse = 'a'
-vim.o.wrap = false
-vim.o.clipboard = 'unnamedplus'
-vim.o.colorcolumn = '79'
-vim.o.breakindent = true
-vim.o.undofile = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.mouse = 'a'
+vim.opt.wrap = false
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.colorcolumn = '79'
+vim.opt.breakindent = true
+vim.opt.undofile = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.wo.signcolumn = 'yes'
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-vim.o.completeopt = 'menuone,noselect'
-vim.o.termguicolors = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = false
-vim.o.smarttab = true
-vim.o.smartcase = true
-vim.o.autowriteall = true
-vim.opt.guicursor = 'n-v-c-i:block'
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.completeopt = 'menuone,noselect'
+vim.opt.termguicolors = true
+vim.opt.tabstop = 4
+vim.opt.textwidth = 80
+-- vim.opt.shiftwidth = 4
+-- vim.opt.expandtab = false
+vim.opt.smarttab = true
+vim.opt.smartcase = true
+vim.opt.autowriteall = true
+-- vim.opt.guicursor = 'n-v-c-i:block'
 
+vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -192,15 +194,27 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', function()
   require('telescope.builtin').git_files { show_untracked = true }
 end, { desc = 'Search [P]roject Git [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]resume' })
+vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
+vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>sn', function()
+  builtin.find_files { cwd = vim.fn.stdpath 'config' }
+end, { desc = '[S]earch [N]eovim files' })
 
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter

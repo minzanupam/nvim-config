@@ -10,7 +10,7 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = 'tokyonight',
+			colorscheme = 'gruvbox',
 			transparent = true,
 			term_colors = true,
 
@@ -100,9 +100,6 @@ return {
 		'ray-x/lsp_signature.nvim',
 		event = 'VeryLazy',
 		opts = {},
-		config = function(_, opts)
-			require('lsp_signature').setup(opts)
-		end,
 	},
 
 	{ 'dhruvasagar/vim-table-mode' },
