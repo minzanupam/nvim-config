@@ -356,6 +356,7 @@ local servers = {
       'html',
       'hbs',
       'templ',
+      'jsp',
     }
   },
 }

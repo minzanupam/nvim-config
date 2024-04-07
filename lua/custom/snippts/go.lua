@@ -21,7 +21,7 @@ local conds = require("luasnip.extras.expand_conditions")
 
 ls.add_snippets("go", {
   s(
-    "err",
+    "er",
     fmt(
       [[
     if err != nil {{
