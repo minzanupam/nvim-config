@@ -99,7 +99,9 @@ return {
 	{
 		'ray-x/lsp_signature.nvim',
 		event = 'VeryLazy',
-		opts = {},
+		opts = {
+			always_trigger = true,
+		},
 	},
 
 	{ 'dhruvasagar/vim-table-mode' },
