@@ -118,6 +118,11 @@ require('lazy').setup({
         end,
       },
     },
+    config = {
+      defaults = {
+        preview = false
+      }
+    }
   },
 
   {
