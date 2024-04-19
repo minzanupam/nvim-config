@@ -11,7 +11,7 @@ return {
 		'ThemerCorp/themer.lua',
 		opts = {
 			colorscheme = 'tokyonight',
-			transparent = false,
+			transparent = true,
 			term_colors = true,
 
 			styles = {
