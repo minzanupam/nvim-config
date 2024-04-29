@@ -332,10 +332,7 @@ end
 
 -- my custom keymap
 vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
--- vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
--- vim.keymap.set('n', '<c-k>', '<cmd>cprev<CR>', { silent = true })
-vim.keymap.set('n', '<C-S-p>', '<cmd>cprev<CR>', { silent = true })
-vim.keymap.set('n', '<C-S-n>', '<cmd>cnext<CR>', { silent = true })
+vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
 
 local servers = {
   -- clangd = {},
