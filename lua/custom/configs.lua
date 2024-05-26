@@ -25,7 +25,7 @@ vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
 
 -- local group_code_format = vim.api.nvim_create_augroup('group_code_format', {})
 -- vim.api.nvim_create_autocmd('BufWritePre', {
---   pattern = { "*.go", "*.rs", "*.js", "*.svelte", "*.ts" },
+--   pattern = { "*.js", "*.svelte", "*.ts", "*.tsx" },
 --   group = group_code_format,
 --   command = ":Neoformat",
 -- })
