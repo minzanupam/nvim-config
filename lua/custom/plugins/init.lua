@@ -96,14 +96,6 @@ return {
 
 	-- { 'mattn/emmet-vim' },
 
-	{
-		'ray-x/lsp_signature.nvim',
-		event = 'VeryLazy',
-		opts = {
-			always_trigger = true,
-		},
-	},
-
 	{ 'dhruvasagar/vim-table-mode' },
 
 	{ 'joerdav/templ.vim' },
