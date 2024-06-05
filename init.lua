@@ -360,6 +360,7 @@ local servers = {
       'typescript',
       'typescriptreact',
       'html',
+      'htmldjango',
       'hbs',
       'templ',
       'jsp',
