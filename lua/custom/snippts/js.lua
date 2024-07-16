@@ -33,6 +33,24 @@ for _, lang in pairs(langs) do
       )
     ),
     s(
+      'type',
+      fmt(
+        [[
+      /** @type {{{}}} */
+        ]],
+        { i(1) }
+      )
+    ),
+    s(
+      'typei',
+      fmt(
+        [[
+      /** @type {{import("./$types").{}}} */
+        ]],
+        { i(1) }
+      )
+    ),
+    s(
       'o/',
       fmt(
         [[
