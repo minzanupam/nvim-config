@@ -118,7 +118,7 @@ require('lazy').setup({
         end,
       },
     },
-    config = {
+    opts = {
       defaults = {
         preview = false
       }
@@ -155,7 +155,7 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = 'menuone,noselect'
 vim.opt.termguicolors = true
 vim.opt.tabstop = 4
-vim.opt.textwidth = 80
+-- vim.opt.textwidth = 80
 -- vim.opt.shiftwidth = 4
 -- vim.opt.expandtab = false
 vim.opt.smarttab = true
@@ -435,3 +435,4 @@ cmp.setup {
 
 require 'custom.configs'
 require 'custom.snippts'
+require 'custom.functions'
