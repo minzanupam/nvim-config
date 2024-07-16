@@ -10,8 +10,8 @@ return {
 	{
 		'ThemerCorp/themer.lua',
 		opts = {
-			colorscheme = 'gruvbox',
-			transparent = true,
+			colorscheme = false,
+			transparent = false,
 			term_colors = true,
 
 			styles = {
@@ -69,6 +69,15 @@ return {
 				},
 			},
 		},
+	},
+
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme gruvbox]])
+		end,
+		opts = {}
 	},
 
 	-- undo tree
