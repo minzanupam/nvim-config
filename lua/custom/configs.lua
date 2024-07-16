@@ -1,10 +1,10 @@
-vim.api.nvim_create_autocmd('BufReadPost', {
-  callback = function()
-    require('rust-tools').inlay_hints.enable()
-  end,
-  group = nil,
-  pattern = '*.rs',
-})
+-- vim.api.nvim_create_autocmd('BufReadPost', {
+--   callback = function()
+--     require('rust-tools').inlay_hints.enable()
+--   end,
+--   group = nil,
+--   pattern = '*.rs',
+-- })
 
 -- harpoon 2
 local harpoon = require("harpoon")
@@ -70,3 +70,5 @@ require 'treesitter-context'.setup {
   zindex = 20,     -- The Z-index of the context window
   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
+
+vim.keymap.set('n', '<leader>td', ":e ~/Documents/notes/todos/todo.txt<CR>", { desc = 'Edit [T]o[D]o.txt' })
