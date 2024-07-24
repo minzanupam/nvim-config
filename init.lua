@@ -161,6 +161,7 @@ vim.opt.tabstop = 4
 vim.opt.smarttab = true
 vim.opt.smartcase = true
 vim.opt.autowriteall = true
+vim.opt.hidden = false
 -- vim.opt.guicursor = 'n-v-c-i:block'
 
 vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
