@@ -1,4 +1,3 @@
-function print_date()
-  print("hello world")
-  nvim_buf_set_lines(buf, 0, 2, false, false)
+function print_hello()
+  vim.api.nvim_put({ "hello world" }, "", false, true)
 end
