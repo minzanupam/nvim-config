@@ -338,7 +338,8 @@ end
 
 -- my custom keymap
 vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
-vim.keymap.set('n', '<c-j>', '<cmd>cnext<CR>', { silent = true })
+vim.keymap.set('n', '<F3>', '<cmd>cnext<CR>', { silent = true })
+vim.keymap.set('n', '<F4>', '<cmd>cprev<CR>', { silent = true })
 
 local servers = {
   -- clangd = {},
