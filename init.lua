@@ -202,10 +202,10 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', function()
-  require('telescope.builtin').git_files { show_untracked = true }
-end, { desc = 'Search [P]roject Git [F]iles' })
-vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+-- vim.keymap.set('n', '<leader>pf', function()
+--   require('telescope.builtin').git_files { show_untracked = true }
+-- end, { desc = 'Search [P]roject Git [F]iles' })
+vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = '[P]roject search [F]iles' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
