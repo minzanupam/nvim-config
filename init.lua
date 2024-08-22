@@ -133,7 +133,7 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  require 'kickstart.plugins.autoformat',
+  -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
   { import = 'custom.plugins' },
 }, {})
@@ -143,7 +143,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.wrap = false
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamed'
 vim.opt.colorcolumn = '79'
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -168,6 +168,7 @@ vim.opt.hidden = true
 vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('x', '<leader>p', '"_dP')
+vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
@@ -400,6 +401,7 @@ local luasnip = require 'luasnip'
 luasnip.config.setup {}
 
 cmp.setup {
+  enabled = false,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
