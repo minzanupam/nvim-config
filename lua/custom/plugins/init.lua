@@ -1,6 +1,6 @@
 return {
 	-- auto closing parenthesise, brackets, etc
-	{ 'windwp/nvim-autopairs', opts = {} },
+	{ 'windwp/nvim-autopairs' },
 
 	-- lsp extestions
 	{ 'hrsh7th/cmp-buffer' },
@@ -87,10 +87,10 @@ return {
 	{ 'nvim-treesitter/playground' },
 
 	-- improve rust integration nvim
-	{
-		'simrat39/rust-tools.nvim',
-		opts = {},
-	},
+	-- {
+	-- 	'simrat39/rust-tools.nvim',
+	-- 	opts = {},
+	-- },
 
 	-- { 'ThePrimeagen/harpoon', opts = {} },
 
@@ -105,10 +105,10 @@ return {
 
 	-- { 'mattn/emmet-vim' },
 
-	{ 'dhruvasagar/vim-table-mode' },
+	-- { 'dhruvasagar/vim-table-mode' },
 
 	{ 'joerdav/templ.vim' },
-	{ 'mustache/vim-mustache-handlebars' },
+	-- { 'mustache/vim-mustache-handlebars' },
 	{
 		'stevearc/aerial.nvim',
 		opts = {},
@@ -121,10 +121,10 @@ return {
 
 	{ 'nvim-treesitter/nvim-treesitter-context' },
 
-	{
-		'folke/zen-mode.nvim',
-		opts = {},
-	},
+	-- {
+	-- 	'folke/zen-mode.nvim',
+	-- 	opts = {},
+	-- },
 
 	{
 		'folke/trouble.nvim',
@@ -132,7 +132,7 @@ return {
 		opts = {},
 	},
 
-	{ 'vuciv/vim-bujo' },
+	-- { 'vuciv/vim-bujo' },
 
 	{
 		"ray-x/go.nvim",
