@@ -39,7 +39,7 @@ require('lazy').setup({
     },
   },
 
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim' },
   {
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -168,7 +168,7 @@ vim.opt.hidden = true
 vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('x', '<leader>p', '"_dP')
-vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
