@@ -72,3 +72,5 @@ require 'treesitter-context'.setup {
 }
 
 vim.keymap.set('n', '<leader>td', ":e ~/Documents/notes/todos/todo.txt<CR>", { desc = 'Edit [T]o[D]o.txt' })
+
+vim.diagnostic.enable(false)
