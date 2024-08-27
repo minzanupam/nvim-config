@@ -164,6 +164,9 @@ vim.opt.autowrite = true
 vim.opt.autowriteall = true
 vim.opt.hidden = true
 -- vim.opt.guicursor = 'n-v-c-i:block'
+-- set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+vim.o.list = true
+vim.o.listchars = 'tab:  ,nbsp:␣,trail:•'
 
 vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

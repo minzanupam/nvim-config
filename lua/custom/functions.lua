@@ -14,3 +14,12 @@ function print_date()
   local today = run_command("date +%Y-%m-%d")
   vim.api.nvim_put({ today .. " " }, "", false, true)
 end
+
+function trim_whitespace()
+  vim.cmd([[silent! %s/\s\+$//g]])
+end
+
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   pattern = { "*" },
+--   command = ":lua trim_whitespace()",
+-- })
