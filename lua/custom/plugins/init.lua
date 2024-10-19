@@ -105,7 +105,7 @@ return {
 
 	-- { 'mattn/emmet-vim' },
 
-	-- { 'dhruvasagar/vim-table-mode' },
+	{ 'dhruvasagar/vim-table-mode' },
 
 	{ 'joerdav/templ.vim' },
 	-- { 'mustache/vim-mustache-handlebars' },
@@ -152,7 +152,7 @@ return {
 	{
 		'jghauser/follow-md-links.nvim',
 		config = function()
-			vim.keymap.set('n', '<bs>', ':edit #<cr>', { silent = true })
+			-- vim.keymap.set('n', '<bs>', ':edit #<cr>', { silent = true })
 		end,
 	}
 }
