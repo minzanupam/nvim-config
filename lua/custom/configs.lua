@@ -74,3 +74,12 @@ require 'treesitter-context'.setup {
 vim.keymap.set('n', '<leader>td', ":e ~/Documents/notes/todos/todo.txt<CR>", { desc = 'Edit [T]o[D]o.txt' })
 
 vim.diagnostic.enable(false)
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = {"*.c"},
+  callback = function()
+    vim.opt.tabstop = 8
+    vim.opt.indentwidth = 8
+    vim.opt.notab = 8
+  end
+});
