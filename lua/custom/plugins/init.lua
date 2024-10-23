@@ -101,7 +101,10 @@ return {
 	},
 
 	-- to format code
-	{ 'sbdchd/neoformat' },
+	{ 'sbdchd/neoformat', config = function()
+			vim.cmd("let g:neoformat_enabled_javascript = ['prettier']")
+		end
+	},
 
 	-- { 'mattn/emmet-vim' },
 
