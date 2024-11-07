@@ -107,7 +107,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',  opts = {} },
 
   {
     'nvim-telescope/telescope.nvim',
@@ -175,7 +175,7 @@ vim.o.listchars = 'tab:  ,nbsp:␣,trail:•'
 vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('x', '<leader>p', '"_dP')
-vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
@@ -213,7 +213,8 @@ local builtin = require('telescope.builtin')
 -- vim.keymap.set('n', '<leader>pf', function()
 --   require('telescope.builtin').git_files { show_untracked = true }
 -- end, { desc = 'Search [P]roject Git [F]iles' })
-vim.keymap.set('n', '<leader>pf', function() builtin.find_files({hidden=false}) end, { desc = '[P]roject search [F]iles' })
+vim.keymap.set('n', '<leader>pf', function() builtin.find_files({ hidden = true }) end,
+  { desc = '[P]roject search [F]iles' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
