@@ -112,7 +112,7 @@ return {
 
 	{ 'dhruvasagar/vim-table-mode' },
 
-	{ 'joerdav/templ.vim' },
+	-- { 'joerdav/templ.vim' },
 	-- { 'mustache/vim-mustache-handlebars' },
 	{
 		'stevearc/aerial.nvim',

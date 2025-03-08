@@ -46,7 +46,11 @@ return {
 
         -- Tsserver usually works poorly. Sorry you work with bad languages
         -- You can remove this line if you know what you're doing :)
-        if client.name == 'tsserver' or client.name == "java_language_server" then
+        if
+            client.name == 'tsserver' or
+            client.name == "java_language_server" or
+            client.name == "ts_ls"
+        then
           return
         end
 
