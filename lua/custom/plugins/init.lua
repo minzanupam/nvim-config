@@ -7,80 +7,80 @@ return {
 	{ 'hrsh7th/cmp-path' },
 
 	-- for colorscheme
-	-- {
-	-- 	'ThemerCorp/themer.lua',
-	-- 	opts = {
-	-- 		colorscheme = 'gruvbox',
-	-- 		transparent = false,
-	-- 		term_colors = true,
-	--
-	-- 		styles = {
-	-- 			constant = { style = 'bold' },
-	-- 			constantBuiltIn = { style = 'bold' },
-	-- 			keyword = { style = 'italic' },
-	-- 			keywordBuiltIn = { style = 'italic' },
-	-- 		},
-	-- 		plugins = {
-	-- 			treesitter = true,
-	-- 			indentline = true,
-	-- 			barbar = true,
-	-- 			bufferline = true,
-	-- 			cmp = true,
-	-- 			gitsigns = true,
-	-- 			lsp = true,
-	-- 			telescope = true,
-	-- 		},
-	-- 		remaps = {
-	-- 			palette = {
-	-- 				gruvbox = {
-	-- 					['dimmed'] = { ['subtle'] = '#7c6f64' },
-	-- 					-- ["bg"] = { ["base"] = "#1d2021" },
-	-- 				},
-	-- 				tokyodark = {
-	-- 					['bg'] = { ['selected'] = '#32334a' },
-	-- 				},
-	-- 			},
-	-- 			highlights = {
-	-- 				gruvbox = {
-	-- 					base = {
-	-- 						ColorColumn = { bg = '#3c3836' },
-	-- 					},
-	-- 				},
-	-- 				nord = {
-	-- 					base = {
-	-- 						ColorColumn = { bg = '#3b4252' },
-	-- 					},
-	-- 				},
-	-- 				tokyodark = {
-	-- 					base = {
-	-- 						ColorColumn = { bg = '#32334a' },
-	-- 					},
-	-- 				},
-	-- 				tokyonight = {
-	-- 					base = {
-	-- 						ColorColumn = { bg = '#3b4252' },
-	-- 					},
-	-- 				},
-	-- 				catppuccin = {
-	-- 					base = {
-	-- 						ColorColumn = { bg = '#32334a' },
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
-
 	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme gruvbox]])
-			-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
-		end,
-		opts = {}
+		'ThemerCorp/themer.lua',
+		opts = {
+			colorscheme = 'tokyonight',
+			transparent = false,
+			term_colors = true,
+
+			styles = {
+				constant = { style = 'bold' },
+				constantBuiltIn = { style = 'bold' },
+				keyword = { style = 'italic' },
+				keywordBuiltIn = { style = 'italic' },
+			},
+			plugins = {
+				treesitter = true,
+				indentline = true,
+				barbar = true,
+				bufferline = true,
+				cmp = true,
+				gitsigns = true,
+				lsp = true,
+				telescope = true,
+			},
+			remaps = {
+				palette = {
+					gruvbox = {
+						['dimmed'] = { ['subtle'] = '#7c6f64' },
+						-- ["bg"] = { ["base"] = "#1d2021" },
+					},
+					tokyodark = {
+						['bg'] = { ['selected'] = '#32334a' },
+					},
+				},
+				highlights = {
+					gruvbox = {
+						base = {
+							ColorColumn = { bg = '#3c3836' },
+						},
+					},
+					nord = {
+						base = {
+							ColorColumn = { bg = '#3b4252' },
+						},
+					},
+					tokyodark = {
+						base = {
+							ColorColumn = { bg = '#32334a' },
+						},
+					},
+					tokyonight = {
+						base = {
+							ColorColumn = { bg = '#3b4252' },
+						},
+					},
+					catppuccin = {
+						base = {
+							ColorColumn = { bg = '#32334a' },
+						},
+					},
+				},
+			},
+		},
 	},
 
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme gruvbox]])
+	-- 		-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+	-- 	end,
+	-- 	opts = {}
+	-- },
+	--
 	-- undo tree
 	{ 'mbbill/undotree' },
 
