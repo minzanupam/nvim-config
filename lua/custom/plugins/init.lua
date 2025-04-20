@@ -56,11 +56,11 @@ return {
 							ColorColumn = { bg = '#32334a' },
 						},
 					},
-					tokyonight = {
-						base = {
-							ColorColumn = { bg = '#3b4252' },
-						},
-					},
+					-- tokyonight = {
+					-- 	base = {
+					-- 		ColorColumn = { bg = '#3b4252' },
+					-- 	},
+					-- },
 					catppuccin = {
 						base = {
 							ColorColumn = { bg = '#32334a' },
