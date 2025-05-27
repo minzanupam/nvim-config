@@ -172,6 +172,7 @@ vim.opt.hidden = true
 -- set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 vim.o.list = true
 vim.o.listchars = 'tab:  ,nbsp:␣,trail:•'
+vim.o.grepprg = 'rg --vimgrep'
 
 vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
