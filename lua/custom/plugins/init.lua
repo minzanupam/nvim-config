@@ -71,26 +71,26 @@ return {
 	-- 	},
 	-- },
 
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme gruvbox]])
-	-- 		-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
-	-- 	end,
-	-- 	opts = {}
-	-- },
-	--
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
+		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
-		opts = {},
 		config = function()
-			vim.cmd([[colorscheme tokyonight-night]])
+			vim.cmd([[colorscheme gruvbox]])
 			-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 		end,
+		opts = {}
 	},
+
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme tokyonight-night]])
+	-- 		-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+	-- 	end,
+	-- },
 	-- undo tree
 	{ 'mbbill/undotree' },
 

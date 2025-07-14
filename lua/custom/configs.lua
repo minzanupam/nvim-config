@@ -37,9 +37,9 @@ vim.o.guifont = "Fira Code:h12"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-require 'lspconfig'.gdscript.setup { capabilities = capabilities }
-require 'lspconfig'.zls.setup { capabilities = capabilities }
-vim.g.zig_fmt_autosave = 0
+-- require 'lspconfig'.gdscript.setup { capabilities = capabilities }
+-- require 'lspconfig'.zls.setup { capabilities = capabilities }
+-- vim.g.zig_fmt_autosave = 0
 
 require("aerial").setup({
   -- optionally use on_attach to set keymaps when aerial has attached to a buffer
