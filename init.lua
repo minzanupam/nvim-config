@@ -353,11 +353,11 @@ vim.keymap.set('n', '<F3>', '<cmd>cnext<CR>', { silent = true })
 vim.keymap.set('n', '<F4>', '<cmd>cprev<CR>', { silent = true })
 
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
+  clangd = {},
+  gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  rust_analyzer = {},
+  ts_ls = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
@@ -390,9 +390,25 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local mason_lspconfig = require 'mason-lspconfig'
 
-mason_lspconfig.setup {
-  ensure_installed = vim.tbl_keys(servers),
-}
+mason_lspconfig.setup()
+
+local lspconfig = require('lspconfig')
+
+-- for i, server_name in ipairs(servers) do
+--   require('lspconfig')[server_name].setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     settings = servers[server_name],
+--     filetypes = (servers[server_name] or {}).filetypes,
+--   }
+-- end
+
+-- require('lspconfig')['ts_ls'].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   settings = servers['ts_ls'],
+--   filetypes = (servers['ts_ls'] or {}).filetypes,
+-- }
 
 -- mason_lspconfig.setup_handlers {
 --   function(server_name)
