@@ -166,6 +166,9 @@ vim.o.scrolloff = 0
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Turn off line wrapping
+vim.o.wrap = false
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
