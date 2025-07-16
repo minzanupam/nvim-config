@@ -390,18 +390,18 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local mason_lspconfig = require 'mason-lspconfig'
 
-mason_lspconfig.setup()
+mason_lspconfig.setup({ automatic_enable = false })
 
 local lspconfig = require('lspconfig')
 
--- for i, server_name in ipairs(servers) do
---   require('lspconfig')[server_name].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     settings = servers[server_name],
---     filetypes = (servers[server_name] or {}).filetypes,
---   }
--- end
+for i, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+  require('lspconfig')[server_name].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = servers[server_name],
+    filetypes = (servers[server_name] or {}).filetypes,
+  }
+end
 
 -- require('lspconfig')['ts_ls'].setup {
 --   capabilities = capabilities,
