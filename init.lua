@@ -169,6 +169,9 @@ vim.o.confirm = true
 -- Turn off line wrapping
 vim.o.wrap = false
 
+-- set vertial column for max characters
+vim.o.colorcolumn = '79'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
