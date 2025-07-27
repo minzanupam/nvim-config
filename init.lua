@@ -862,6 +862,36 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local harpoon = require 'harpoon'
+      harpoon:setup()
+
+      vim.keymap.set('n', '<leader>ha', function()
+        harpoon:list():add()
+      end)
+      vim.keymap.set('n', '<leader>hl', function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end)
+
+      vim.keymap.set('n', '<C-h>', function()
+        harpoon:list():select(1)
+      end)
+      vim.keymap.set('n', '<C-t>', function()
+        harpoon:list():select(2)
+      end)
+      vim.keymap.set('n', '<C-n>', function()
+        harpoon:list():select(3)
+      end)
+      vim.keymap.set('n', '<C-s>', function()
+        harpoon:list():select(4)
+      end)
+    end,
+  },
+
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
