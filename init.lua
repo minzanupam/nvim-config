@@ -218,6 +218,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', ']', '<cmd>cnext<CR>', { desc = 'Go to next item in quickfix list' })
 vim.keymap.set('n', '[', '<cmd>cprevious<CR>', { desc = 'Go to previous item in quickfix list' })
 
+-- paste helper
+vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste helper, override the default paste in visual mode to non copy' })
+vim.keymap.set('v', '<leader>p', 'p', { desc = 'Paste helper, copy on paste' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
