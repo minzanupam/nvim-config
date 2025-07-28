@@ -214,6 +214,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- quickfix list helpers
 vim.keymap.set('n', ']', '<cmd>cnext<CR>', { desc = 'Go to next item in quickfix list' })
 vim.keymap.set('n', '[', '<cmd>cprevious<CR>', { desc = 'Go to previous item in quickfix list' })
 
