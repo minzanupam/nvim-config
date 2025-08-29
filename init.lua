@@ -222,6 +222,9 @@ vim.keymap.set('n', '[', '<cmd>cprevious<CR>', { desc = 'Go to previous item in 
 vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste helper, override the default paste in visual mode to non copy' })
 vim.keymap.set('v', '<leader>p', 'p', { desc = 'Paste helper, copy on paste' })
 
+
+vim.keymap.set('n', '<C-g>', ':let @+=fnamemodify(expand("%"), ":~:.") . ":" . line(".")<CR>', {desc = 'copy current line and location to clipboard'})
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
