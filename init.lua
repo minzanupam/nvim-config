@@ -554,7 +554,7 @@ require('lazy').setup({
           end,
         },
       }
-      vim.diagnostic.enable(false)
+      vim.diagnostic.enable(true)
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -629,7 +629,7 @@ require('lazy').setup({
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            -- local capabilities = require('blink.cmp').get_lsp_capabilities()
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
@@ -684,7 +684,7 @@ require('lazy').setup({
 
   { -- Autocompletion
     'saghen/blink.cmp',
-    enabled = false,
+    enabled = true,
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
