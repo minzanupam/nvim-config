@@ -239,6 +239,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.templ", "*.svelte", "*.ts", "*.tsx", "*.js", "*.jsx"},
+  callback = function() 
+    vim.bo.ts = 2
+    vim.bo.sw = 2
+    vim.bo.et = true
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -555,7 +564,7 @@ require('lazy').setup({
           end,
         },
       }
-      vim.diagnostic.enable(false)
+      vim.diagnostic.enable(true)
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -600,6 +609,16 @@ require('lazy').setup({
             },
           },
         },
+        -- ts_ls = {
+        --   root_dir = require("lspconfig").util.root_pattern({ "package.json", "tsconfig.json" }),
+        --   single_file_support = false,
+        --   settings = {},
+        -- },
+        -- denols = {
+        --   root_dir = require("lspconfig").util.root_pattern({"deno.json", "deno.jsonc"}),
+        --   single_file_support = false,
+        --   settings = {},
+        -- },
       }
 
       -- Ensure the servers and tools above are installed
@@ -630,7 +649,7 @@ require('lazy').setup({
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            -- local capabilities = require('blink.cmp').get_lsp_capabilities()
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
@@ -686,7 +705,7 @@ require('lazy').setup({
 
   { -- Autocompletion
     'saghen/blink.cmp',
-    enabled = false,
+    enabled = true,
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
@@ -791,6 +810,9 @@ require('lazy').setup({
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     -- 'ellisonleao/gruvbox.nvim',
+    opts = {
+      transparent = true,
+    },
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       ---@diagnostic disable-next-line: missing-fields
@@ -803,6 +825,9 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      require("tokyonight").setup({
+        transparent = true,
+      })
       vim.cmd.colorscheme 'tokyonight-moon'
     end,
   },
@@ -915,7 +940,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
