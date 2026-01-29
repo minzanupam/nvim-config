@@ -655,6 +655,10 @@ require('lazy').setup({
           end,
         },
       }
+
+      -- installed on the system
+      vim.lsp.enable('zls')
+
     end,
   },
 
