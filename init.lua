@@ -222,8 +222,7 @@ vim.keymap.set('n', '[', '<cmd>cprevious<CR>', { desc = 'Go to previous item in 
 vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste helper, override the default paste in visual mode to non copy' })
 vim.keymap.set('v', '<leader>p', 'p', { desc = 'Paste helper, copy on paste' })
 
-
-vim.keymap.set('n', '<C-g>', ':let @+=fnamemodify(expand("%"), ":~:.") . ":" . line(".")<CR>', {desc = 'copy current line and location to clipboard'})
+vim.keymap.set('n', '<C-g>', ':let @+=fnamemodify(expand("%"), ":~:.") . ":" . line(".")<CR>', { desc = 'copy current line and location to clipboard' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -239,9 +238,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
-  pattern = {"*.templ", "*.svelte", "*.ts", "*.tsx", "*.js", "*.jsx"},
-  callback = function() 
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+  pattern = { '*.templ', '*.svelte', '*.ts', '*.tsx', '*.js', '*.jsx' },
+  callback = function()
     vim.bo.ts = 2
     vim.bo.sw = 2
     vim.bo.et = true
@@ -657,8 +656,7 @@ require('lazy').setup({
       }
 
       -- installed on the system
-      vim.lsp.enable('zls')
-
+      vim.lsp.enable 'zls'
     end,
   },
 
@@ -678,22 +676,23 @@ require('lazy').setup({
     },
     opts = {
       notify_on_error = false,
-      -- format_on_save = function(bufnr)
-      --   -- Disable "format_on_save lsp_fallback" for languages that don't
-      --   -- have a well standardized coding style. You can add additional
-      --   -- languages here or re-enable it for the disabled ones.
-      --   local disable_filetypes = { c = true, cpp = true }
-      --   if disable_filetypes[vim.bo[bufnr].filetype] then
-      --     return nil
-      --   else
-      --     return {
-      --       timeout_ms = 500,
-      --       lsp_format = 'fallback',
-      --     }
-      --   end
-      -- end,
+      format_on_save = function(bufnr)
+        -- Disable "format_on_save lsp_fallback" for languages that don't
+        -- have a well standardized coding style. You can add additional
+        -- languages here or re-enable it for the disabled ones.
+        local disable_filetypes = { c = true, cpp = true }
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          return nil
+        else
+          return {
+            timeout_ms = 500,
+            lsp_format = 'fallback',
+          }
+        end
+      end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        go = { 'goimports', 'gofmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -829,9 +828,9 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      require("tokyonight").setup({
-        transparent = true,
-      })
+      require('tokyonight').setup {
+        transparent = false,
+      }
       vim.cmd.colorscheme 'tokyonight-moon'
     end,
   },
